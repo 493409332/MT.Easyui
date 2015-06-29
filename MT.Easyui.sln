@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MT.Easyui", "MT.Easyui\MT.Easyui.csproj", "{019C02D6-4BA9-4299-91C1-013C0EC7D12A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Complex", "Complex\Complex.csproj", "{FB325505-BCD1-44D0-9ACA-FD3224E185EC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test.ConsoleApplication", "Test.ConsoleApplication\Test.ConsoleApplication.csproj", "{E474D629-D37A-461D-80C9-0C8FD1D70A0D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{019C02D6-4BA9-4299-91C1-013C0EC7D12A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{019C02D6-4BA9-4299-91C1-013C0EC7D12A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{019C02D6-4BA9-4299-91C1-013C0EC7D12A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{019C02D6-4BA9-4299-91C1-013C0EC7D12A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB325505-BCD1-44D0-9ACA-FD3224E185EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB325505-BCD1-44D0-9ACA-FD3224E185EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB325505-BCD1-44D0-9ACA-FD3224E185EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB325505-BCD1-44D0-9ACA-FD3224E185EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E474D629-D37A-461D-80C9-0C8FD1D70A0D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E474D629-D37A-461D-80C9-0C8FD1D70A0D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E474D629-D37A-461D-80C9-0C8FD1D70A0D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E474D629-D37A-461D-80C9-0C8FD1D70A0D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

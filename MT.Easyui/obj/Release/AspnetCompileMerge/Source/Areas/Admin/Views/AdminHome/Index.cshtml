@@ -1,0 +1,255 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>经典后台框架</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+
+ 
+    <link type="text/css" href="~/Scripts/easyui1.3.3/themes/bootstrap/easyui.css" rel="stylesheet" /> 
+ 
+    <link href="~/Content/iconcss/common.css" rel="stylesheet" />
+    <link href="~/Content/iconcss/icon.css" rel="stylesheet" />
+    <link href="~/Content/iconcss/css3btn.css" rel="stylesheet" />
+
+
+    <script type="text/javascript" src="~/Scripts/easyui1.3.3/jquery-1.7.2.min.js"></script>
+    @*easyui*@
+    <script type="text/javascript" src="~/Scripts/easyui1.3.3/jquery.easyui.all.js"></script> 
+    <script type="text/javascript" src="~/Scripts/easyui1.3.3/locale/easyui-lang-zh_CN.js"></script>
+    @*easyui*@
+
+    <script type="text/javascript" src="~/Scripts/admin/XiuCai.index.js"></script>
+    
+    @*jnotify*@
+    <link href="~/Scripts/jquery/jQgrid/default/jquery-ui-1.8.4.custom.css" rel="stylesheet" />
+    <link href="~/Scripts/jquery/jquery.jnotify.css" rel="stylesheet" />
+    <script type="text/javascript" src="~/Scripts/jquery/jquery.jnotify.js"></script>
+     @*jnotify*@
+
+    @*msgbox*@
+    <link href="~/Scripts/qqmsg/msgbox.css" rel="stylesheet" />
+    <script type="text/javascript"  src="~/Scripts/qqmsg/jQuery.qqmsg.js"></script>
+    @*msgbox*@
+    @*hDialog*@
+    <script type="text/javascript"  src="~/Scripts/easyui1.3.3/Xiucai.EasyUI.Extensions.js"></script> 
+      @*hDialog*@
+    <script src="~/Scripts/jquery/jquery.validate.js"></script>
+
+
+    <script type="text/javascript">
+       
+
+        var _menus=@Html.Raw( ViewData["Navigation"]);
+       
+        var _menus1 = [{
+            "id": 1, "text": "系统设置", "iconCls": "icon-set1", "attributes": { "url": "#", "iconUrl": "", "parentid": 0, "sortnum": 0, "BigImageUrl": null }, "children": [
+                {
+                    "id": 2, "text": "操作按钮", "iconCls": "icon-bricks", "attributes": { "url": "/Admin/Button/Index", "iconUrl": "/Content/iconcss/icon/bricks.png", "parentid": 1, "sortnum": 1, "BigImageUrl": "/Content/iconcss/icon/32/bricks.png" }
+                    , "children": [{ "id": 30, "text": "添加", "iconCls": "icon-add", "attributes": { "url": "2222", "iconUrl": "/Content/iconcss/icon/16/add.png", "parentid": 2, "sortnum": 1, "BigImageUrl": "/Content/iconcss/icon/32/add.png" }, "children": [] }
+
+                        , { "id": 32, "text": "修改", "iconCls": "icon-edit", "attributes": { "url": "/", "iconUrl": "/Content/iconcss/icon/16/edit.gif", "parentid": 2, "sortnum": 1, "BigImageUrl": "/Content/iconcss/icon/32/page_edit.png" }, "children": [] }, { "id": 33, "text": "删除", "iconCls": "icon-delete", "attributes": { "url": "/", "iconUrl": "/Content/iconcss/icon/16/delete.png", "parentid": 2, "sortnum": 3, "BigImageUrl": "/Content/iconcss/icon/32/cross.png" }, "children": [] }]
+                }, { "id": 10, "text": "导航菜单", "iconCls": "icon-application_side_tree", "attributes": { "url": "/Admin/Navigation/Index", "iconUrl": "/Content/iconcss/icon/application_side_tree.png", "parentid": 1, "sortnum": 2, "BigImageUrl": "/Content/iconcss/icon/32/sitemap_color.png" }, "children": [] }, { "id": 11, "text": "角色管理", "iconCls": "icon-group", "attributes": { "url": "/Admin/Role/Index", "iconUrl": "/Content/iconcss/icon/group.png", "parentid": 1, "sortnum": 3, "BigImageUrl": "/Content/iconcss/icon/32/group.png" }, "children": [] }, { "id": 12, "text": "用户管理", "iconCls": "icon-users", "attributes": { "url": "/Admin/User/", "iconUrl": "/Content/iconcss/icon/users.png", "parentid": 1, "sortnum": 4, "BigImageUrl": "/Content/iconcss/icon/32/group.png" }, "children": [] }, { "id": 13, "text": "部门管理", "iconCls": "icon-chart_organisation", "attributes": { "url": "/Admin/Department/", "iconUrl": "/Content/iconcss/icon/chart_organisation.png", "parentid": 1, "sortnum": 5, "BigImageUrl": "/Content/iconcss/icon/32/chart_organisation.png" }, "children": [] }, { "id": 14, "text": "数据字典", "iconCls": "icon-book_open_mark", "attributes": { "url": "sys/datadic.aspx", "iconUrl": "/Content/iconcss/icon/book_open_mark.png", "parentid": 1, "sortnum": 6, "BigImageUrl": "/Content/iconcss/icon/32/book_addresses.png" }, "children": [] }, { "id": 15, "text": "操作日志", "iconCls": "icon-page_error", "attributes": { "url": "sys/logs.aspx", "iconUrl": "/Content/iconcss/icon/page_error.png", "parentid": 1, "sortnum": 7, "BigImageUrl": "/Content/iconcss/icon/32/page_lightning.png" }, "children": [] }, { "id": 16, "text": "个性化设置", "iconCls": "icon-wrench_orange", "attributes": { "url": "sys/SysConfig.aspx", "iconUrl": "/Content/iconcss/icon/wrench_orange.png", "parentid": 1, "sortnum": 8, "BigImageUrl": "/Content/iconcss/icon/32/palette.png" }, "children": [{ "id": 31, "text": "个性化", "iconCls": "icon-lightbulb", "attributes": { "url": "sys/sysconfig.aspx", "iconUrl": "/Content/iconcss/icon/16/lightbulb.png", "parentid": 16, "sortnum": 1, "BigImageUrl": "/Content/iconcss/icon/32/palette.png" }, "children": [] }] }, { "id": 17, "text": "数据库", "iconCls": "icon-database_yellow", "attributes": { "url": "sys/databackup.aspx", "iconUrl": "/Content/iconcss/icon/database_yellow.png", "parentid": 1, "sortnum": 9, "BigImageUrl": "/Content/iconcss/icon/32/database_gear.png" }, "children": [] }]
+        }, { "id": 34, "text": "DEMO", "iconCls": "icon-note", "attributes": { "url": "#", "iconUrl": "", "parentid": 0, "sortnum": 1, "BigImageUrl": "/Content/iconcss/icon/32/note.png" }, "children": [{ "id": 35, "text": "数据权限", "iconCls": "icon-note", "attributes": { "url": "demo/datatest.aspx", "iconUrl": "", "parentid": 34, "sortnum": 1, "BigImageUrl": "/Content/iconcss/icon/32/note.png" }, "children": [] }] }];
+
+
+        //设置登录窗口
+        function openPwd()
+        {
+            $('#w').window({
+                title: '修改密码',
+                width: 300,
+                modal: true,
+                shadow: true,
+                closed: true,
+                height: 160,
+                resizable: false
+            });
+        }
+        //关闭登录窗口
+        function closePwd()
+        {
+            $('#w').window('close');
+        }
+
+
+
+        //修改密码
+        function serverLogin()
+        {
+            var $newpass = $('#txtNewPass');
+            var $rePass = $('#txtRePass');
+
+            if ($newpass.val() == '')
+            {
+                msgShow('系统提示', '请输入密码！', 'warning');
+                return false;
+            }
+            if ($rePass.val() == '')
+            {
+                msgShow('系统提示', '请在一次输入密码！', 'warning');
+                return false;
+            }
+
+            if ($newpass.val() != $rePass.val())
+            {
+                msgShow('系统提示', '两次密码不一至！请重新输入', 'warning');
+                return false;
+            }
+
+            $.post('/ajax/editpassword.ashx?newpass=' + $newpass.val(), function (msg)
+            {
+                msgShow('系统提示', '恭喜，密码修改成功！<br>您的新密码为：' + msg, 'info');
+                $newpass.val('');
+                $rePass.val('');
+                close();
+            })
+
+        }
+
+        $(function ()
+        {
+
+            openPwd();
+
+            $('#editpass').click(function ()
+            {
+                $('#w').window('open');
+            });
+
+            $('#btnEp').click(function ()
+            {
+                serverLogin();
+            })
+
+            $('#btnCancel').click(function () { closePwd(); })
+
+            $('#loginOut').click(function ()
+            {
+                $.messager.confirm('系统提示', '您确定要退出本次登录吗?', function (r)
+                {
+
+                    if (r)
+                    {
+                        $.get("/Admin/AdminLogin/ClearSessionOrCookies").then(
+                          function ()
+                          {
+                              location.href = '/Admin/AdminLogin';
+                          });
+                    }
+                });
+            })
+
+            $('#notity').jnotifyInizialize({
+                oneAtTime: true,
+                appendType: 'append'
+            }).css({
+                'position': 'absolute',
+                'top': '10px',  
+                '-top': '10px', 'left': '50%',
+                'margin': '10px 0px 0px -120px',
+                '-margin': '0px 0px 0px -120px',
+                //'right': '20px',
+                'width': '240px',
+                'z-index': '99999'
+            });
+        });
+
+
+
+    </script>
+
+
+</head>
+<body class="easyui-layout" style="overflow-y: hidden" fit="true" scroll="no">
+    <noscript>
+        <div style="position: absolute; z-index: 100000; height: 2046px; top: 0px; left: 0px; width: 100%; background: white; text-align: center;">
+            <img src="/Content/admin/images/noscript.gif" alt='抱歉，请开启脚本支持！' />
+        </div>
+    </noscript>
+
+
+
+    <div id="loading-mask" style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; background: #D2E0F2; z-index: 20000">
+        <div id="pageloading" style="position: absolute; top: 50%; left: 50%; margin: -120px 0px 0px -120px; text-align: center; border: 2px solid #8DB2E3; width: 200px; height: 40px; font-size: 14px; padding: 10px; font-weight: bold; background: #fff; color: #15428B;">
+            <img src="/Content/admin/images/loading.gif" align="absmiddle" />
+            正在加载中,请稍候...
+        </div>
+    </div>
+
+
+
+    <div region="north" split="true" border="false" style="overflow: hidden; height: 80px; background: url(/Content/admin/images/layout-browser-hd-bg.gif) #7f99be repeat-x center 50%; line-height: 20px; color: #fff; font-family: Verdana, 微软雅黑,黑体;position:relative">
+        <span style="float: right; padding-right: 20px;" class="head">欢迎 admin <a href="#" id="editpass">修改密码</a> <a href="#" id="loginOut">安全退出</a></span>
+        <span style="padding-left: 10px; font-size: 16px;">
+            <img src="/Content/admin/images/blocks.gif" width="20" height="20" align="absmiddle" />
+            jQuery.EasyUI- 1.2.6 应用实例</span>
+
+        <div id="notity"></div>
+    </div>
+@*    <div region="south" split="true" style="height: 30px; background: #D2E0F2;" collapsible="true">
+
+        <div class="footer">mt</div>
+
+    </div>*@
+    <div region="west" split="true" title="导航菜单" style="width: 180px;" id="west">
+        <div id="nav">
+            <!--  导航内容 -->
+
+        </div>
+        <div style="margin: 5px">
+            <ul id="wnav"></ul>
+        </div>
+    </div>
+    <div id="mainPanle" region="center" style="background: #eee; overflow-y: hidden">
+        <div id="tabs" class="easyui-tabs" fit="true" border="false">
+            <div title="欢迎使用" style="padding: 20px; overflow: hidden; color: red;">
+            </div>
+        </div>
+    </div>
+
+
+    <!--修改密码窗口-->
+    <div id="w" class="easyui-window" title="修改密码" collapsible="false" minimizable="false"
+        maximizable="false" icon="icon-save" style="width: 300px; height: 150px; padding: 5px; background: #fafafa;">
+        <div class="easyui-layout" fit="true">
+            <div region="center" border="false" style="padding: 10px; background: #fff; border: 1px solid #ccc;">
+                <table cellpadding="3">
+                    <tr>
+                        <td>新密码：</td>
+                        <td>
+                            <input id="txtNewPass" type="Password" class="txt01" /></td>
+                    </tr>
+                    <tr>
+                        <td>确认密码：</td>
+                        <td>
+                            <input id="txtRePass" type="Password" class="txt01" /></td>
+                    </tr>
+                </table>
+            </div>
+            <div region="south" border="false" style="text-align: right; height: 30px; line-height: 30px;">
+                <a id="btnEp" class="easyui-linkbutton" icon="icon-ok" href="javascript:void(0)">确定</a> <a id="btnCancel" class="easyui-linkbutton" icon="icon-cancel" href="javascript:void(0)">取消</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="mm" class="easyui-menu" style="width: 150px;">
+        <div id="tabupdate">刷新</div>
+        <div class="menu-sep"></div>
+        <div id="close">关闭</div>
+        <div id="closeall">全部关闭</div>
+        <div id="closeother">除此之外全部关闭</div>
+        <div class="menu-sep"></div>
+        <div id="closeright">当前页右侧全部关闭</div>
+        <div id="closeleft">当前页左侧全部关闭</div>
+        <div class="menu-sep"></div>
+        <div id="exit">退出</div>
+    </div>
+
+
+</body>
+</html>

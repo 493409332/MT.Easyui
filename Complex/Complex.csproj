@@ -1,0 +1,287 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB325505-BCD1-44D0-9ACA-FD3224E185EC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Complex</RootNamespace>
+    <AssemblyName>Complex</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Word, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.Practices.ObjectBuilder2, Version=2.2.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.Practices.Unity, Version=3.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1405-prerelease\lib\net45\Microsoft.Practices.Unity.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.Configuration, Version=3.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1405-prerelease\lib\net45\Microsoft.Practices.Unity.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Unity.RegistrationByConvention, Version=3.5.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Unity.3.5.1405-prerelease\lib\net45\Microsoft.Practices.Unity.RegistrationByConvention.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="MongoDB, Version=0.90.0.1, Culture=neutral, PublicKeyToken=f61bd00ba2535278, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\MongoDB.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.1.3.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess, Version=4.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Oracle\Oracle.ManagedDataAccess.dll</HintPath>
+    </Reference>
+    <Reference Include="Oracle.ManagedDataAccess.EntityFramework, Version=6.121.2.0, Culture=neutral, PublicKeyToken=89b483f429c47342, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\Oracle\EF6\Oracle.ManagedDataAccess.EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Admin\Comm.cs" />
+    <Compile Include="Common\Admin\SingletonProvider.cs" />
+    <Compile Include="Common\Admin\SysVisitor.cs" />
+    <Compile Include="Common\Cache\DataCache.cs" />
+    <Compile Include="Common\Cache\DefaultCacheStrategy.cs" />
+    <Compile Include="Common\Cache\ICacheStrategy.cs" />
+    <Compile Include="Common\Cache\MyCache.cs" />
+    <Compile Include="Common\Cache\MyCacheExtension.cs" />
+    <Compile Include="Common\Cache\OrCache.cs" />
+    <Compile Include="Common\Config\ConfigHelper.cs" />
+    <Compile Include="Common\Config\Extraction_AppConfig.cs" />
+    <Compile Include="Common\Config\FileConfig.cs" />
+    <Compile Include="Common\Config\HostInfo.cs" />
+    <Compile Include="Common\Config\ImageConfig.cs" />
+    <Compile Include="Common\Config\Regin.cs" />
+    <Compile Include="Common\Config\ResponseFileTypeUtilities.cs" />
+    <Compile Include="Common\Config\WebConfig.cs" />
+    <Compile Include="Common\Data\FilterTranslator.cs" />
+    <Compile Include="Common\Encryption\DEncrypt.cs" />
+    <Compile Include="Common\Encryption\DESEncrypt.cs" />
+    <Compile Include="Common\Encryption\Encryption.cs" />
+    <Compile Include="Common\Encryption\EncryptionHelper.cs" />
+    <Compile Include="Common\Encryption\EncryptionMD5.cs" />
+    <Compile Include="Common\Encryption\HashEncode.cs" />
+    <Compile Include="Common\Encryption\RSACryption.cs" />
+    <Compile Include="Common\Enumspace\CRUDState.cs" />
+    <Compile Include="Common\Text\Text.cs" />
+    <Compile Include="Common\Utility\Attribute\AuthorizationAttribute.cs" />
+    <Compile Include="Common\Utility\Attribute\DataTableMapper.cs" />
+    <Compile Include="Common\Utility\Attribute\LoginInterceptFilter.cs" />
+    <Compile Include="Common\Utility\Attribute\NoField.cs" />
+    <Compile Include="Common\Utility\Bases.cs" />
+    <Compile Include="Common\Utility\cookies.cs" />
+    <Compile Include="Common\Utility\DescriptionAttribute.cs" />
+    <Compile Include="Common\Utility\EnumItem.cs" />
+    <Compile Include="Common\Utility\Excelcs.cs" />
+    <Compile Include="Common\Utility\Extensions\ArrayExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\CacheExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\CastAnonymous.cs" />
+    <Compile Include="Common\Utility\Extensions\ControlExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\DateTimeExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\DtTolistExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\EnumExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\IComparableExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\IEnumerableExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\MTConvert.cs" />
+    <Compile Include="Common\Utility\Extensions\ObjectExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\ReferenceTypeExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\StringExtension.cs" />
+    <Compile Include="Common\Utility\Extensions\ValueTypeExtension.cs" />
+    <Compile Include="Common\Utility\FileUtil.cs" />
+    <Compile Include="Common\Utility\FormatValidate.cs" />
+    <Compile Include="Common\Utility\FormParas.cs" />
+    <Compile Include="Common\Utility\HttpProc.cs" />
+    <Compile Include="Common\Utility\IFileStorage.cs" />
+    <Compile Include="Common\Utility\ImageUtil.cs" />
+    <Compile Include="Common\Utility\INIFile.cs" />
+    <Compile Include="Common\Utility\IPageNumberRenderPlan.cs" />
+    <Compile Include="Common\Utility\ITouchable%271.cs" />
+    <Compile Include="Common\Utility\ITouchable.cs" />
+    <Compile Include="Common\Utility\JQHighchartsHelper.cs" />
+    <Compile Include="Common\Utility\Json.cs" />
+    <Compile Include="Common\Utility\JSONhelper.cs" />
+    <Compile Include="Common\Utility\Language.cs" />
+    <Compile Include="Common\Utility\MD5Hashing.cs" />
+    <Compile Include="Common\Utility\NetworkUtil.cs" />
+    <Compile Include="Common\Utility\PageValidate.cs" />
+    <Compile Include="Common\Utility\PhysicsFileStorage.cs" />
+    <Compile Include="Common\Utility\ReaderWriterCache.cs" />
+    <Compile Include="Common\Utility\Reflector\ILFieldAccessor.cs" />
+    <Compile Include="Common\Utility\Reflector\ILMethodInvoker.cs" />
+    <Compile Include="Common\Utility\Reflector\ILPropertyAccessor.cs" />
+    <Compile Include="Common\Utility\Reflector\ILReflectorFactory.cs" />
+    <Compile Include="Common\Utility\Reflector\IMemberAccessor.cs" />
+    <Compile Include="Common\Utility\Reflector\IMethodInvoker.cs" />
+    <Compile Include="Common\Utility\Reflector\IReflectorFactory.cs" />
+    <Compile Include="Common\Utility\Reflector\ReflectorCache.cs" />
+    <Compile Include="Common\Utility\SecurityUtil.cs" />
+    <Compile Include="Common\Utility\Spell.cs" />
+    <Compile Include="Common\Utility\SpellOptions.cs" />
+    <Compile Include="Common\Utility\StringPlus.cs" />
+    <Compile Include="Common\Utility\TimeParser.cs" />
+    <Compile Include="Common\Utility\UploadResult.cs" />
+    <Compile Include="Common\Utility\ValidateImage\ArithmeticImageGenerator.cs" />
+    <Compile Include="Common\Utility\ValidateImage\DefaultValidateImageGenerator.cs" />
+    <Compile Include="Common\Utility\ValidateImage\IValidateImageGenerator.cs" />
+    <Compile Include="Common\Utility\ValidateImage\ValidateImageHelper.cs" />
+    <Compile Include="Common\Utility\ValidateImage\VerifyCodeWave.cs" />
+    <Compile Include="Common\Utility\ValidateImage\WaveValidateImageGenerator.cs" />
+    <Compile Include="Common\Utility\Validate\IntValidationHelper.cs" />
+    <Compile Include="Common\Utility\Validate\StringValidationHelper.cs" />
+    <Compile Include="Common\Utility\Validate\TipInfo.cs" />
+    <Compile Include="Common\Utility\Validate\Validation.cs" />
+    <Compile Include="Common\Utility\Validate\ValidationHelper.cs" />
+    <Compile Include="Common\Utility\WebUtil.cs" />
+    <Compile Include="Common\WordTool\WordPlayer.cs" />
+    <Compile Include="EFRepository\Repository\EFRepositoryBaseGeneric.cs" />
+    <Compile Include="Entity\Admin\Temp\T_UserTem.cs" />
+    <Compile Include="Entity\Admin\T_NavButtons.cs" />
+    <Compile Include="Entity\Admin\T_UserInfo.cs" />
+    <Compile Include="Entity\EntityBase.cs" />
+    <Compile Include="Entity\Admin\ConfigModel.cs" />
+    <Compile Include="Entity\Admin\T_Navigation.cs" />
+    <Compile Include="Entity\Admin\T_Button.cs" />
+    <Compile Include="Entity\Admin\T_Department.cs" />
+    <Compile Include="Entity\Admin\T_RoleNavBtns.cs" />
+    <Compile Include="Entity\Admin\T_Roles_Departments.cs" />
+    <Compile Include="Entity\Admin\T_User.cs" />
+    <Compile Include="Entity\Admin\T_UserRoles.cs" />
+    <Compile Include="Entity\Admin\T_Role.cs" />
+    <Compile Include="ICO_AOP\Attribute\AOPConfigAttribute.cs" />
+    <Compile Include="ICO_AOP\Attribute\ICOConfigAttribute.cs" />
+    <Compile Include="ICO_AOP\Attribute\ICO_AOPEnableAttribute.cs" />
+    <Compile Include="ICO_AOP\Attribute\OpenBaseAttribute.cs" />
+    <Compile Include="ICO_AOP\StaticWeaving\BaseAttribute\AspectAttribute.cs" />
+    <Compile Include="ICO_AOP\StaticWeaving\Context\InvokeContext.cs" />
+    <Compile Include="ICO_AOP\StaticWeaving\Factory\DynamicProxyGenerator.cs" />
+    <Compile Include="ICO_AOP\StaticWeaving\Factory\ProxyFactory.cs" />
+    <Compile Include="ICO_AOP\Utility\Factory\DependencyFactory.cs" />
+    <Compile Include="ICO_AOP\Utility\IRegister.cs" />
+    <Compile Include="Logical\Admin\AopAttribute\CacheAttribute.cs" />
+    <Compile Include="Logical\Admin\AopAttribute\EndAttribute.cs" />
+    <Compile Include="Logical\Admin\AopAttribute\ExAttribute.cs" />
+    <Compile Include="Logical\Admin\AopAttribute\StartAttribute.cs" />
+    <Compile Include="Logical\Admin\AopAttribute\UniqueExAttribute.cs" />
+    <Compile Include="Logical\Admin\CacheManag\CacheManagement.cs" />
+    <Compile Include="Logical\Admin\IButton.cs" />
+    <Compile Include="Logical\Admin\IDepartment.cs" />
+    <Compile Include="Logical\Admin\ILogin.cs" />
+    <Compile Include="Logical\Admin\INavButtons.cs" />
+    <Compile Include="Logical\Admin\INavigation.cs" />
+    <Compile Include="Logical\Admin\IRole.cs" />
+    <Compile Include="Logical\Admin\IRoleNavBtns.cs" />
+    <Compile Include="Logical\Admin\IUser.cs" />
+    <Compile Include="Logical\Admin\IUserInfo.cs" />
+    <Compile Include="Logical\Admin\IUserRoles.cs" />
+    <Compile Include="Logical\Admin\Realization\RButton.cs" />
+    <Compile Include="Logical\Admin\Realization\RDepartment.cs" />
+    <Compile Include="Logical\Admin\Realization\RLogin.cs.cs" />
+    <Compile Include="Logical\Admin\Realization\RNavButtons.cs" />
+    <Compile Include="Logical\Admin\Realization\RNavigation.cs" />
+    <Compile Include="Logical\Admin\Realization\RRole.cs" />
+    <Compile Include="Logical\Admin\Realization\RRoleNavBtns.cs" />
+    <Compile Include="Logical\Admin\Realization\RUser.cs" />
+    <Compile Include="Logical\Admin\Realization\RUserInfo.cs" />
+    <Compile Include="Logical\Admin\Realization\RUserRoles.cs" />
+    <Compile Include="Logical\BaseEndAttribute.cs" />
+    <Compile Include="Logical\BaseExAttribute.cs" />
+    <Compile Include="Logical\BaseStartAttribute.cs" />
+    <Compile Include="Logical\IBase.cs" />
+    <Compile Include="Logical\RBase.cs" />
+    <Compile Include="MongoDB\Entity\Error.cs" />
+    <Compile Include="MongoDB\Entity\Log.cs" />
+    <Compile Include="MongoDB\Enumspace\OperationType.cs" />
+    <Compile Include="MongoDB\Map\BaseMapping.cs" />
+    <Compile Include="MongoDB\Map\MyMapping.cs" />
+    <Compile Include="MongoDB\Utility\MongoDBUtility.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="EFRepository\Repository\EFRepositoryBase.cs" />
+    <Compile Include="EFRepository\EFUtility\EntitytoData.cs" />
+    <Compile Include="EFRepository\Repository\IRepository.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DLL\MongoDB.dll" />
+    <Content Include="DLL\MongoDB.pdb" />
+    <Content Include="DLL\MongoDB.xml" />
+    <Content Include="DLL\Newtonsoft.Json.dll" />
+    <Content Include="DLL\Newtonsoft.Json.xml" />
+    <Content Include="DLL\NPOI.dll" />
+    <Content Include="DLL\Oracle\EF6\Oracle.ManagedDataAccess.EntityFramework.dll" />
+    <Content Include="DLL\Oracle\Oracle.ManagedDataAccess.dll" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Common\Teechart\" />
+    <Folder Include="Entity\Admin\Mapping\" />
+    <Folder Include="Logical\Test\AopAttribute\" />
+    <Folder Include="Logical\Test\Realization\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

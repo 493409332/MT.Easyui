@@ -1,0 +1,17 @@
+﻿@{
+    ViewBag.Title = "Department";
+}
+
+<div id="toolbar">
+    <a title="添加" icon="icon-add" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_add">添加 </a>
+    <div class="datagrid-btn-separator"></div>
+    <a title="编辑" icon="icon-pencil" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_edit">编辑 </a>
+    <div class="datagrid-btn-separator"></div>
+    <a title="删除" icon="icon-delete3" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_delete">删除 </a>
+    <div class="datagrid-btn-separator"></div>
+</div>
+
+
+<table id="depGrid"></table>
+ 
+<script type="text/javascript" src="~/Scripts/avalon/avalon.js" data-main="/ScriptsLogical/Department/main.js"></script>
