@@ -135,28 +135,39 @@ namespace Complex.Common.Data
 
             return null;
         }
-        public static Expression<Func<T, bool>> GenerateEx<T>(FilterRule rule) 
+        public static Expression<Func<T, bool>> GenerateEx<T>(FilterRule rule)
         {
 
             ParameterExpression param = Expression.Parameter(typeof(T), "p");
 
-            PropertyInfo pi = typeof(T).GetProperty(rule.field);  
+            PropertyInfo pi = typeof(T).GetProperty(rule.field);
 
-            Expression right = Expression.Constant(rule.data);//键
+            Type pitype = pi.PropertyType;
+
+
+            Expression right = Expression.Constant(rule.data, pitype);//键
 
             Expression left = Expression.Property(param, pi);//建立属性
-           
-            
+
+
             //Expression<Func<T, bool>> two2 = c => { 
-               
+
             //    pi.GetValue(c,null).ToString().StartsWith(rule.data.ToString());
             // return true;
             //};
-
-
-            switch (rule.op.ToLower() )
+            Expression<Func<T, string>> leftfunc = null;
+            if ( pitype == typeof(string) )
             {
-                case "eq": return Expression.Lambda<Func<T, bool>>(Expression.Equal(left, right), param); 
+                leftfunc =
+               Expression.Lambda<Func<T, string>>(
+                   left,
+                   new ParameterExpression[] { param }
+               );
+            }
+      
+            switch ( rule.op.ToLower() )
+            {
+                case "eq": return Expression.Lambda<Func<T, bool>>(Expression.Equal(left, right), param);
                 case "gt": return Expression.Lambda<Func<T, bool>>(Expression.GreaterThan(left, right), param);
                 case "ge": return Expression.Lambda<Func<T, bool>>(Expression.GreaterThanOrEqual(left, right), param);
                 case "nu":
@@ -168,6 +179,19 @@ namespace Complex.Common.Data
                 case "lt": return Expression.Lambda<Func<T, bool>>(Expression.LessThan(left, right), param);
                 case "le": return Expression.Lambda<Func<T, bool>>(Expression.LessThanOrEqual(left, right), param);
 
+                case "cn":
+                    if ( pitype == typeof(string) )
+                    {
+                        var startsWithMethod = typeof(string).GetMethod("StartsWith", new[] { typeof(string) });
+                        var body = (Expression) Expression.Call(leftfunc.Body, startsWithMethod, right);
+                        return Expression.Lambda<Func<T, bool>>(body, param);
+                    }
+                    else
+                    {
+                        return Expression.Lambda<Func<T, bool>>(Expression.Equal(left, right), param);
+                    }
+                  
+
                 //case "cn": return Expression.Lambda<Func<T, bool>>(Expression.(left, right), param);
                 //case "bw": return  Expression.Lambda<Func<T, bool>>(Expression.Equal(left, right), param);
                 //case "ew": return Expression.Lambda<Func<T, bool>>(Expression.Equal(left, right), param);
@@ -178,10 +202,41 @@ namespace Complex.Common.Data
                 default: return Expression.Lambda<Func<T, bool>>(Expression.Equal(left, right), param);
             }
 
-             
-        }
 
- 
+        }
+        /// <summary>
+        /// 单个like p1%   用法 return BuildContainsExpression<T, string>(leftfunc, productNames);
+        /// </summary>
+        /// <typeparam name="TElement"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="valueSelector"></param>
+        /// <param name="value"></param>
+        /// <returns></returns>
+        public static Expression<Func<TElement, bool>> BuildContainsExpression<TElement, TValue>(Expression<Func<TElement, TValue>> valueSelector,
+ TValue value)
+        {
+            var startsWithMethod = typeof(string).GetMethod("StartsWith", new[] { typeof(string) });
+            var body = (Expression) Expression.Call(valueSelector.Body, startsWithMethod, Expression.Constant(value, typeof(TValue)));
+            var p = Expression.Parameter(typeof(TElement));
+            return Expression.Lambda<Func<TElement, bool>>(body, p);
+        }
+        /// <summary>
+        /// 多个 like   p1% or p2%
+        /// </summary>
+        /// <typeparam name="TElement"></typeparam>
+        /// <typeparam name="TValue"></typeparam>
+        /// <param name="valueSelector"></param>
+        /// <param name="values"></param>
+        /// <returns></returns>
+        public static Expression<Func<TElement, bool>> BuildContainsExpression<TElement, TValue>(Expression<Func<TElement, TValue>> valueSelector,
+         IEnumerable<TValue> values)
+        {
+            var startsWithMethod = typeof(string).GetMethod("StartsWith", new[] { typeof(string) });
+            var startWiths = values.Select(value => (Expression) Expression.Call(valueSelector.Body, startsWithMethod, Expression.Constant(value, typeof(TValue))));
+            var body = startWiths.Aggregate<Expression>(( (accumulate, equal) => Expression.Or(accumulate, equal) ));
+            var p = Expression.Parameter(typeof(TElement));
+            return Expression.Lambda<Func<TElement, bool>>(body, p);
+        } 
 
 
         public static Expression<Func<T, bool>> Or<T>(this Expression<Func<T, bool>> expression1, Expression<Func<T, bool>> expression2)
