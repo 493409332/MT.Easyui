@@ -6,8 +6,9 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+ 
 using Complex.Entity.Admin;
-
+ 
 namespace Complex.Repository.Utility
 {
     public class EntitytoData : DbContext
@@ -57,6 +58,8 @@ namespace Complex.Repository.Utility
         public DbSet<T_RoleNavBtns> T_RoleNavBtns { get; set; }
 
         public DbSet<T_UserRoles> T_UserRoles { get; set; }
+
+      
 
         protected override bool ShouldValidateEntity(System.Data.Entity.Infrastructure.DbEntityEntry entityEntry)
         {
@@ -121,13 +124,13 @@ namespace Complex.Repository.Utility
 
             context.T_Navigation.Add(new T_Navigation() { ID = 6, NavTitle = "部门管理", iconCls = "icon-chart_organisation", Linkurl = "/Admin/Department/Index", iconUrl = "/Content/iconcss/icon/chart_organisation.png", ParentID = 1, Sortnum = 96, BigImageUrl = "/Content/iconcss/icon/32/chart_organisation.png", IsSys = true });
 
-            context.T_Navigation.Add(new T_Navigation() { ID = 7, NavTitle = "个性化设置", iconCls = "icon-wrench_orange", Linkurl = "/Admin/UserConfig/Index", iconUrl = "/Content/iconcss/icon/wrench_orange.png", ParentID = 1, Sortnum = 95, BigImageUrl = "/Content/iconcss/icon/32/palette.png", IsSys = true }); 
+            context.T_Navigation.Add(new T_Navigation() { ID = 7, NavTitle = "个性化设置", iconCls = "icon-wrench_orange", Linkurl = "/Admin/UserConfig/Index", iconUrl = "/Content/iconcss/icon/wrench_orange.png", ParentID = 1, Sortnum = 95, BigImageUrl = "/Content/iconcss/icon/32/palette.png", IsSys = true });
 
-            context.T_Navigation.Add(new T_Navigation() { ID = 8, NavTitle = "操作日志", iconCls = "icon-page_error", Linkurl = "#", iconUrl = "/Content/iconcss/icon/page_error.png", ParentID = 1, Sortnum = 94, BigImageUrl = "/Content/iconcss/icon/32/page_error.png", IsSys = true });
+            context.T_Navigation.Add(new T_Navigation() { ID = 8, NavTitle = "操作日志", iconCls = "icon-page_error", Linkurl = "/Admin/AdminLog/Index", iconUrl = "/Content/iconcss/icon/page_error.png", ParentID = 1, Sortnum = 94, BigImageUrl = "/Content/iconcss/icon/32/page_error.png", IsSys = true });
 
         
 
-            context.T_Navigation.Add(new T_Navigation() { ID = 9, NavTitle = "DEMO", iconCls = "icon-note", Linkurl = "#", iconUrl = "/Content/iconcss/icon/note.png", ParentID = 0, Sortnum = 2, BigImageUrl = "/Content/iconcss/icon/32/note.png", IsSys = true });
+            context.T_Navigation.Add(new T_Navigation() { ID = 9, NavTitle = "DEMO", iconCls = "icon-note", Linkurl = "#", iconUrl = "/Content/iconcss/icon/note.png", ParentID = 0, Sortnum = 2, BigImageUrl = "/Content/iconcss/icon/32/note.png", IsSys = false });
 
             context.T_Button.Add(new T_Button() { ID = 1, ButtonTag = "browser", iconCls = "icon-eye", ButtonText = "浏览", IconUrl = "", Remark = "所有页面必须有此权限方可访问!", Sortnum = 101 });
             context.T_Button.Add(new T_Button() { ID = 2, ButtonTag = "add", iconCls = "icon-add", ButtonText = "添加", IconUrl = "", Remark = "", Sortnum = 100, IsSys = true });

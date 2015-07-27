@@ -1,0 +1,72 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+  <style>
+        * {
+       
+        font-size:14px;
+        padding:0;
+        margin:0;
+        border:0;
+    }
+
+
+  </style>
+
+
+ <script src="GetUserALLConfigJs" type="text/javascript"></script>
+   
+<div ms-controller="AdminLogcontroller">
+  <div id="toolbar"  style="height: 27px;padding-top:6px">
+       
+@*          <a title="添加" icon="icon-add" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_add"> 添加 </a> <div class="datagrid-btn-separator"></div>
+    <a title="编辑" icon="icon-pencil" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_edit"> 编辑 </a><div class="datagrid-btn-separator"></div>
+    <a title="删除" icon="icon-delete3" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_delete"> 删除 </a><div class="datagrid-btn-separator"></div>
+           <a title="搜索" icon="icon-search" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_search"> 搜索 </a><div class="datagrid-btn-separator"></div>*@
+       
+       @Html.Raw( ViewData["Btustr"])
+
+   <div style="float:left;padding:0 10px 0 10px;">执行类名：<input id="runclass" class="easyui-combobox"   name="dept"   
+    data-options="valueField:'value',textField:'name',url:'GetClasslist'" /></div> 
+    <div class="datagrid-btn-separator" style="margin-top:-2px;"></div>
+  <div style="float:left;padding:0 10px 0 10px">  操作人姓名：<input id="username" class="easyui-combobox"   name="dept"   
+    data-options="valueField:'value',textField:'name',url:'GetUserNamelist'" />  </div> 
+
+      
+@*       <a title="添加" icon="icon-arrow_undo" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: right;margin-right:10px;margin-top:1px;" id="CZ"> 重置 </a>
+            <div class="datagrid-btn-separator" style="float: right;"></div>
+      
+            <input id="ss" class="easyui-searchbox" style="width:240px;" />
+             
+             
+            <div id="searchMenu" style="width:120px;">
+                
+
+            </div>
+           *@
+   
+      @if ( ViewData["UserName"].ToString() == "admin" )
+      {
+          
+      
+         @:<div style="float:right;margin-right:10px; ">
+         @:<a title="清空日志" icon="icon-delete3" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="a_clear_log" ms-click="clear_log"> 清空日志 </a>
+         @: </div>
+        
+      }
+       <div style="float:right;margin-right:10px; ">
+         <a title="重置" icon="icon-arrow_undo" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="arrow_undo" ms-click="arrow_undo"> 重置 </a>
+         </div>
+
+          <div style="float:right;margin-right:10px; ">
+         <a title="查询" icon="icon-search" class="easyui-linkbutton l-btn l-btn-plain" plain="true" href="javascript:;" style="float: left" id="search_log" ms-click="search_log"> 查询 </a>
+         </div>
+
+  </div>
+    <table id="LogGrid"></table>
+
+</div>
+
+
+
+<script type="text/javascript" src="~/Scripts/avalon/avalon.js" data-main="/ScriptsLogical/Admin/AdminLog/main.js"></script>

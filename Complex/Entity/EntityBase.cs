@@ -13,8 +13,11 @@ namespace Complex.Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID {get;set;}
+        public int ID { get; set; }
         //[DefaultValue(false)]
         public bool IsDelete { get; set; }
+        private Guid _guid = Guid.NewGuid();
+        public Guid GuID { get { return _guid; } set { _guid = value; } }
+
     }
 }

@@ -118,6 +118,7 @@
     <Compile Include="Common\Encryption\HashEncode.cs" />
     <Compile Include="Common\Encryption\RSACryption.cs" />
     <Compile Include="Common\Enumspace\CRUDState.cs" />
+    <Compile Include="Common\LinqEx\LinqOrderBy.cs" />
     <Compile Include="Common\Text\Text.cs" />
     <Compile Include="Common\Utility\Attribute\AuthorizationAttribute.cs" />
     <Compile Include="Common\Utility\Attribute\DataTableMapper.cs" />
@@ -215,9 +216,13 @@
     <Compile Include="Logical\Admin\AopAttribute\CacheAttribute.cs" />
     <Compile Include="Logical\Admin\AopAttribute\EndAttribute.cs" />
     <Compile Include="Logical\Admin\AopAttribute\ExAttribute.cs" />
+    <Compile Include="Logical\Admin\AopAttribute\LogAttribute.cs" />
     <Compile Include="Logical\Admin\AopAttribute\StartAttribute.cs" />
+    <Compile Include="Logical\Admin\AopAttribute\T_UserInfoCacheAttribute.cs" />
     <Compile Include="Logical\Admin\AopAttribute\UniqueExAttribute.cs" />
     <Compile Include="Logical\Admin\CacheManag\CacheManagement.cs" />
+    <Compile Include="Logical\Admin\IAdminLog.cs" />
+    <Compile Include="Logical\Admin\IBase.cs" />
     <Compile Include="Logical\Admin\IButton.cs" />
     <Compile Include="Logical\Admin\IDepartment.cs" />
     <Compile Include="Logical\Admin\ILogin.cs" />
@@ -228,6 +233,8 @@
     <Compile Include="Logical\Admin\IUser.cs" />
     <Compile Include="Logical\Admin\IUserInfo.cs" />
     <Compile Include="Logical\Admin\IUserRoles.cs" />
+    <Compile Include="Logical\Admin\Realization\RAdminLog.cs" />
+    <Compile Include="Logical\Admin\Realization\RBase.cs" />
     <Compile Include="Logical\Admin\Realization\RButton.cs" />
     <Compile Include="Logical\Admin\Realization\RDepartment.cs" />
     <Compile Include="Logical\Admin\Realization\RLogin.cs.cs" />
@@ -267,11 +274,10 @@
   <ItemGroup>
     <Folder Include="Common\Teechart\" />
     <Folder Include="Entity\Admin\Mapping\" />
-    <Folder Include="Logical\Test\AopAttribute\" />
-    <Folder Include="Logical\Test\Realization\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Logical\Admin\AopAttribute\End.dgml" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

@@ -176,7 +176,7 @@ namespace MT.Easyui
         }
         public JavaScriptResult GetUserALLConfigJs()
         {
-            return JavaScript(" var userthemes = 'Scripts/easyui1.3.3/themes/" + theme + "/easyui.css'; var usergridRows=" + gridRows+";");
+            return JavaScript(" var userthemes = 'Scripts/easyui1.3.3/themes/" + theme + "/easyui.css'; var usergridRows=" + gridRows + ";var pageList=[10, 20, 30,40,50, 60,70,80,90,100];");
         }
       //  UserConfig model = json.Deserialize<UserConfig>();
         /// <summary>

@@ -51,11 +51,14 @@ namespace MT.Easyui.Areas.Admin.Controllers
         [HttpPost]
         public ActionResult Index(T_User usermodel)
         {
+
             if ( ILogin.SearchForName(usermodel.UserName) )
             {
                usermodel= ILogin.SearchForNameorPwd(usermodel.UserName,  Complex.Common.Encryption.EncryptionMD5.GetMd5Hash( usermodel.Password));
                if ( usermodel!=null )
-                { 
+                {
+                    CacheManagement.Instance.RemoveByID("T_UserInfo", usermodel.ID);
+
                     Session["userinfo"] = IUserInfo.GetUserInfo(usermodel);
                     System.Web.HttpCookie newcookie = new HttpCookie("user");
                     newcookie.Values["userid"] = usermodel.ID.ToString();

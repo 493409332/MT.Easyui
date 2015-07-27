@@ -68,7 +68,7 @@ namespace MtAop.Context
         }
         string _className;
         /// <summary>
-        /// 方法元数据
+        /// 类全名元数据
         /// </summary>
         public string ClassFullName
         {

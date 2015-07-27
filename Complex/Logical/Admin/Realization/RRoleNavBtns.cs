@@ -7,6 +7,7 @@ using Complex.Entity.Admin;
 using Complex.ICO_AOP.Attribute;
 using Newtonsoft.Json.Linq;
 using Complex.Common.Utility.Extensions;
+using Complex.Logical.Admin.AopAttribute;
 namespace Complex.Logical.Admin.Realization
 {
     [ICOConfig("RRoleNavBtns")]
@@ -29,6 +30,7 @@ namespace Complex.Logical.Admin.Realization
         }
 
         [AOPTransaction]
+        [Log]
         public bool setRoleButtons(string Data)
         {
             JObject jobj = JObject.Parse(Data);

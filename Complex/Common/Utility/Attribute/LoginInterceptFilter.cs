@@ -38,7 +38,7 @@ namespace Complex.Common.Utility.Attribute
             {
                 if ( Cookies["user"] != null && Session["userinfo"] == null )
                 {
-                    Session["userinfo"] = iuserinfo.GetUserInfoByID(Cookies["user"].Values["userid"].ReferenceFromType<string, int>());
+                     iuserinfo.GetUserInfoBySession();
                 }
                 if ( Session["userinfo"] == null && Cookies["user"] == null )
                 {

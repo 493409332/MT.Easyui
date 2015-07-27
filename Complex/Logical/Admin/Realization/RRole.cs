@@ -60,7 +60,7 @@ namespace Complex.Logical.Admin.Realization
 
             return GetAllNoCache().ToList();
         }
-        [Complex.Logical.Admin.AopAttribute.Start]
+       
         public override List<T_Role> GetPage(string predicate, int page, int page_size, string order, string asc, out int total)
         {
             return base.GetPage(predicate, page, page_size, order, asc, out total);

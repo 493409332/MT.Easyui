@@ -14,7 +14,7 @@ namespace Complex.Logical.Admin
     public interface IUserRoles : ITransientLifetimeManagerRegister, IBase<T_UserRoles>
     {
         List<T_UserRoles> GetRoleByUserID(int UserID);
-        bool DeleteRoleByUserID(int UserID);
+     
         int AddUserTo(int UserID,int[] roleids);
     }
 }

@@ -20,7 +20,8 @@ namespace Complex.Logical.Admin.Realization
         public List<T_Department> GetTreeGrid(int ParentID)
         {
 
-            List<T_Department> quer = GetAllNoCache().Where(p => p.IsDelete == false).ToList();
+           List<T_Department> quer = GetAllNoCache().Where(p => p.IsDelete == false).ToList();
+          // List<T_Department> quer = GetAllNoCache().Where("b_number == @0", "P(2007)031").ToList();
             List<T_Department> datatreating = new List<T_Department>();
             if (quer != null)
             {
@@ -51,10 +52,10 @@ namespace Complex.Logical.Admin.Realization
             {
                 datatreating = SetGetDepartmentChildren(quer, ParentID);
             }
-            foreach (var item in datatreating.Where(p => p.ParentId == ParentID).ToList())
-            {
-                item.text = item.DepartmentName;
-            }
+            //foreach (var item in datatreating.Where(p => p.ParentId == ParentID).ToList())
+            //{
+            //    item.text = item.DepartmentName;
+            //}
             return datatreating;
         }
 
@@ -63,7 +64,7 @@ namespace Complex.Logical.Admin.Realization
             var datatreating = new List<T_Department>();
             foreach (var item in quer.Where(p => p.ParentId == ParentID).ToList())
             {
-                item.text = item.DepartmentName;
+               // item.text = item.DepartmentName;
                 item.children = SetGetDepartmentChildren(quer, item.ID);
                 datatreating.Add(item);
             }

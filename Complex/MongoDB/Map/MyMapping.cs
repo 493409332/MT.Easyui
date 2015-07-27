@@ -21,7 +21,7 @@ namespace Complex.Mongodb.Map
 
             mapping.Map<Log>();
             
-            mapping.DefaultProfile(p=>p.SubClassesAre(t=>t.IsSubclassOf(typeof(Log))));
+         //   mapping.DefaultProfile(p=>p.SubClassesAre(t=>t.IsSubclassOf(typeof(Log))));
             //mapping.Map<SubClass>();
             //mapping.DefaultProfile(profile =>
             //{

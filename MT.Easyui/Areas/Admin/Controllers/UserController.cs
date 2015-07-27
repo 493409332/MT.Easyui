@@ -7,6 +7,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using Complex.Common.Enumspace;
+using Complex.Common.Encryption;
 
 namespace MT.Easyui.Areas.Admin.Controllers
 {
@@ -36,7 +37,7 @@ namespace MT.Easyui.Areas.Admin.Controllers
         {
             bool Success = false;
             string Message = "添加失败请联系管理员！";
-      
+            model.Password = EncryptionMD5.GetMd5Hash(model.Password);
             int State = iUser.Add(model);
             if ( State > 0 )
             {
@@ -56,7 +57,7 @@ namespace MT.Easyui.Areas.Admin.Controllers
         {
             bool Success = false;
             string Message = "修改失败请联系管理员！";
-
+            model.Password = EncryptionMD5.GetMd5Hash(model.Password);
             int result = iUser.Edit(model);
             if (result > 0)
             {

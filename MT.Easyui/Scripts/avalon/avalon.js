@@ -5646,7 +5646,7 @@ avalon.ready(function() {
 //avalon.config.debug = false;
 require.config({
     baseUrl: "/",
-    debug: false,
+    debug: true,
     paths: {
         jquery1: "Scripts/easyui1.3.3/jquery-1.7.2.min",
         jquery: "Scripts/jquery/jquery-1.8.2",
@@ -5656,10 +5656,13 @@ require.config({
         json2: "Scripts/json/json2",
         jqueryvalidate: "Scripts/jquery/jquery.validate",
         easyui_lang_zh_CN: "Scripts/easyui1.3.3/locale/easyui-lang-zh_CN",
-        showICON: "ScriptsLogical/Common/showICON",
+        showICON: "Scripts/Common/showICON",
         Search: "Scripts/admin/Search",
         linq: "Scripts/Linqjs/linq",
-        linq_jquery: "Scripts/Linqjs/linq.jquery" 
+        linq_jquery: "Scripts/Linqjs/linq.jquery",
+        datagrid_detailview: "Scripts/easyui1.3.3/extend/datagrid-detailview",
+        Conver: "Scripts/Common/Conver",
+        DateFormat: "Scripts/Common/DateFormat"
     },
     shim: {
         jquery: {
@@ -5692,7 +5695,14 @@ require.config({
         linq_jquery: {
             deps: ["linq", "jquery"],
             exports: "linq_jquery"
-        } 
+        },
+        datagrid_detailview: {
+            deps: ["easyui"],
+            exports: "datagrid_detailview"
+        },
+        DateFormat: {
+            exports: "DateFormat"
+        }
     }
-   , urlArgs: "bust=" + (new Date()).getTime()
+  // , urlArgs: "bust=" + (new Date()).getTime()
 });   

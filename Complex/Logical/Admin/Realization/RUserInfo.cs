@@ -28,12 +28,16 @@ namespace Complex.Logical.Admin.Realization
                 model = new T_UserInfo();
                 List<int> t_userrolesidls = GetAllNoCache<T_UserRoles>().Where(p => p.UserID == User.ID).Select(p => p.RoleID).ToList();
 
+               
+
                 List<T_RoleNavBtns> t_rolenavbtnsls = GetAllNoCache<T_RoleNavBtns>().Where(p => t_userrolesidls.Contains(p.RoleID)).ToList();
 
                 List<int> navidls = t_rolenavbtnsls.Select(p => p.NavID).Distinct().ToList();
 
                 var allbut = GetAllNoCache<T_Button>().ToList();
                 model.T_User = User;
+                model.T_Rolels = GetAllNoCache<T_Role>().Where(p => t_userrolesidls.Contains(p.ID)).ToList();
+
                 List<T_Navigation> T_Navigationls = new List<T_Navigation>();
                 foreach ( var item in navidls )
                 {
@@ -70,12 +74,17 @@ namespace Complex.Logical.Admin.Realization
         public T_UserInfo GetUserInfoByID(int ID)
         {
             T_UserInfo model;
-            model = CacheManagement.Instance.Get<T_UserInfo>("T_UserInfo", ID); 
-            if ( model!=null )
+            model = CacheManagement.Instance.Get<T_UserInfo>("T_UserInfo", ID);
+            if ( model != null )
             {
                 return GetUserInfo(model.T_User);
             }
-            return GetUserInfo(GetAllNoCache<T_User>().Where(p => p.ID == ID).FirstOrDefault());
+            var quer = GetAllNoCache<T_User>().Where(p => p.ID == ID).FirstOrDefault();
+            if ( quer != null )
+            {
+                return GetUserInfo(quer);
+            }
+            return null;
         }
         public T_UserInfo GetUserInfoBySession()
         {
@@ -84,12 +93,18 @@ namespace Complex.Logical.Admin.Realization
             if ( Session["userinfo"] is T_UserInfo )
             {
                 return (T_UserInfo) Session["userinfo"];
-            }
+            } else
             if ( Cookies["user"] != null && Session["userinfo"] == null )
             {
-                Session["userinfo"] = GetUserInfoByID(Cookies["user"].Values["userid"].ReferenceFromType<string, int>());
+                var quer=GetUserInfoByID(Cookies["user"].Values["userid"].ReferenceFromType<string, int>());
+                 Session["userinfo"] = quer;
+                 return quer;
             }
-            return null; 
+            else
+            {
+                return null; 
+            }
+           
         }
 
       //  HttpContext.Current.Session[SessionUserIdKey]

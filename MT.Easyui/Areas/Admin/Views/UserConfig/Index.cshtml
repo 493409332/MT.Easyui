@@ -1,6 +1,13 @@
 ﻿@{
     ViewBag.Title = "Index";
 }
+<style>
+    * {
+       
+        font-size:14px
+    }
+
+</style>
 <link href="~/Content/iconcss/css3btn.css" rel="stylesheet" />
 <link href="~/Content/themes/default/style.css" rel="stylesheet" />
 <div id="sysconfig" style="margin:10px;">
@@ -14,7 +21,7 @@
     <h1>菜单设置</h1>
     <div class="c">
         <ul>
-            <li><div>表现方式：</div><input type="text" id="txt_nav_showtype" name="navshowtype"/></li>
+            <li><div>表现方式：</div><input type="text" id="txt_nav_showtype"  height="26px"  name="navshowtype"/></li>
             <li><div>&nbsp;</div> <img id="imgPreview" title="点击看大图" src="/images/menuStyles/Accordion.png" style="width: 200px; margin-top: 3px;padding: 2px; border: 1px solid #ccc;" alt=""/></li>
         </ul>
     </div>
@@ -33,4 +40,4 @@
 </div>
  <script src="GetConfig" type="text/javascript"></script>
  <script src="GetUserALLConfigJs" type="text/javascript"></script>
-<script type="text/javascript" src="~/Scripts/avalon/avalon.js" data-main="/ScriptsLogical/UserConfig/main.js"></script>
+<script type="text/javascript" src="~/Scripts/avalon/avalon.js" data-main="/ScriptsLogical/Admin/UserConfig/main.js"></script>

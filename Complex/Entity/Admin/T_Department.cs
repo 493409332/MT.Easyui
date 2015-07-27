@@ -43,8 +43,8 @@ namespace Complex.Entity.Admin
         [NotMapped]
         public string text
         {
-            get;
-            set;
+            get {return DepartmentName; }
+            
         }
         // [NotMapped]
         ///// <summary>

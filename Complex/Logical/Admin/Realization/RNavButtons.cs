@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Complex.Entity.Admin;
 using Complex.ICO_AOP.Attribute;
+using Complex.Logical.Admin.AopAttribute;
 
 namespace Complex.Logical.Admin.Realization
 {
@@ -24,6 +25,7 @@ namespace Complex.Logical.Admin.Realization
             return GetAllNoCache().Where(p => p.NavId == NavID && p.IsDelete == false).ToList();
         }
         [AOPTransaction]
+        [Log]
         public bool setButtons(int NavID, int[] btns)
         {
             int Erro = 0;

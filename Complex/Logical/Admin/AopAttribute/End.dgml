@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<DirectedGraph xmlns="http://schemas.microsoft.com/vs/2009/dgml">
+  <Nodes>
+    <Node Id="Admin区域父类拦截特性" Category="Comment" Bounds="-7.34234060128209,-554.015418760805,153.95,25.8366666666666" UseManualLocation="True" />
+    <Node Id="BaseEndAttribute" Category="Category5" Bounds="-222.999998779297,-636.544728995366,119.69,25.8366666666667" UseManualLocation="True" />
+    <Node Id="CUD方法结束后缓存管理" Category="Comment" Bounds="-2.88258344014486,-475.468515265973,215.003333333333,25.8366666666667" Label="CUD方法结束后T_UserInfo缓存管理" UseManualLocation="True" />
+    <Node Id="CacheAttribute" Category="Category2" Bounds="-248.10270517985,-472.477040291662,167.25,25.8366666666667" Label="T_UserInfoCacheAttribute" UseManualLocation="True" />
+    <Node Id="EndAttribute" Category="Category6" Bounds="-209.945480610161,-554.909443385904,93.1633333333334,25.8366666666666" UseManualLocation="True" />
+    <Node Id="LogAttribute" Category="Category9" Bounds="-208.993119830348,-409.573550779358,92.96,25.8366666666666" UseManualLocation="True" />
+    <Node Id="日志管理" Category="Comment" Bounds="25.7794979675039,-407.77454555041,129.95,25.8366666666667" Label="Admin区域日志管理" UseManualLocation="True" />
+    <Node Id="结束拦截特性父类" Category="Comment" Bounds="0.780394444868676,-637.95766004611,116,25.8366666666667" UseManualLocation="True" />
+    <Node Id="继承链条" Category="Comment" Bounds="-114.925974265784,-711.153881518233,68,25.8366666666666" UseManualLocation="True" />
+  </Nodes>
+  <Links>
+    <Link Source="Admin区域父类拦截特性" Target="EndAttribute" Bounds="-107.782213530199,-541.777839358989,100.439872928917,0.385395188400025" />
+    <Link Source="CUD方法结束后缓存管理" Target="CacheAttribute" Bounds="-71.8532612453895,-461.355115475568,68.9706778052447,0.766728052897008" />
+    <Link Source="CacheAttribute" Target="EndAttribute" Bounds="-164.303142535208,-520.073598285688,0.643161995042504,47.5965579940265" />
+    <Link Source="EndAttribute" Target="BaseEndAttribute" Bounds="-163.330770096388,-601.708091771466,0.119706415845627,46.798648385562" />
+    <Link Source="LogAttribute" Target="CacheAttribute" Bounds="-163.793294508124,-437.644759813237,0.876712666313693,28.0712090338791" />
+    <Link Source="日志管理" Target="LogAttribute" Bounds="-107.033346869941,-396.26113468675,132.812844837445,0.943393412910552" />
+    <Link Source="结束拦截特性父类" Target="BaseEndAttribute" Bounds="-94.3101811638768,-624.670075104222,95.0905756087454,0.605385310377415" />
+  </Links>
+  <Categories>
+    <Category Id="Category2" Label="类别 2" Background="#FF339933" IsTag="True" />
+    <Category Id="Category5" Label="类别 5" Background="#FF9B4F96" IsTag="True" />
+    <Category Id="Category6" Label="类别 6" Background="#FFA1260D" IsTag="True" />
+    <Category Id="Category9" Label="类别 9" Background="#FF00539C" IsTag="True" />
+    <Category Id="Comment" Label="注释" Description="表示在图表中用户定义的注释" CanBeDataDriven="True" IsProviderRoot="False" NavigationActionLabel="注释" />
+  </Categories>
+  <Properties>
+    <Property Id="Background" Label="背景" Description="背景色" DataType="System.Windows.Media.Brush" />
+    <Property Id="Bounds" DataType="System.Windows.Rect" />
+    <Property Id="CanBeDataDriven" Label="CanBeDataDriven" Description="CanBeDataDriven" DataType="System.Boolean" />
+    <Property Id="Expression" DataType="System.String" />
+    <Property Id="GroupLabel" DataType="System.String" />
+    <Property Id="IsEnabled" DataType="System.Boolean" />
+    <Property Id="IsProviderRoot" Label="IsProviderRoot" Description="IsProviderRoot" DataType="System.Boolean" />
+    <Property Id="IsTag" DataType="System.Boolean" />
+    <Property Id="Label" Label="标签" Description="可批注对象的可显示标签" DataType="System.String" />
+    <Property Id="NavigationActionLabel" Label="NavigationActionLabel" Description="NavigationActionLabel" DataType="System.String" />
+    <Property Id="TargetType" DataType="System.Type" />
+    <Property Id="UseManualLocation" DataType="System.Boolean" />
+    <Property Id="Value" DataType="System.String" />
+    <Property Id="ValueLabel" DataType="System.String" />
+  </Properties>
+  <Styles>
+    <Style TargetType="Node" GroupLabel="类别 9" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('Category9')" />
+      <Setter Property="Background" Value="#FF00539C" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="类别 2" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('Category2')" />
+      <Setter Property="Background" Value="#FF339933" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="类别 6" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('Category6')" />
+      <Setter Property="Background" Value="#FFA1260D" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="类别 5" ValueLabel="具有类别">
+      <Condition Expression="HasCategory('Category5')" />
+      <Setter Property="Background" Value="#FF9B4F96" />
+    </Style>
+    <Style TargetType="Node" GroupLabel="注释" ValueLabel="包含注释">
+      <Condition Expression="HasCategory('Comment')" />
+      <Setter Property="Background" Value="#FFFFFACD" />
+      <Setter Property="Stroke" Value="#FFE5C365" />
+      <Setter Property="StrokeThickness" Value="1" />
+      <Setter Property="NodeRadius" Value="2" />
+      <Setter Property="MaxWidth" Value="250" />
+    </Style>
+  </Styles>
+</DirectedGraph>

@@ -32,7 +32,8 @@ namespace Complex.Logical.Admin.Realization
             var quer = GetByKey(UserID);
             return quer;
         }
-        [Cache]
+       
+        [Log]
         public int SetUseConfigrByKey(int UserID,string json)
         {
             var quer = GetByKey(UserID);

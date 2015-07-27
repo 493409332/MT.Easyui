@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Complex.Entity.Admin;
 using Complex.ICO_AOP;
 using Complex.ICO_AOP.Attribute;
+using Complex.Logical.Admin.AopAttribute;
 using Complex.Repository;
 
 namespace Complex.Logical.Admin.Realization
@@ -31,26 +32,8 @@ namespace Complex.Logical.Admin.Realization
             return GetAllNoCache().Where(p => p.UserID == UserID).ToList();
         }
 
-        public bool DeleteRoleByUserID(int UserID)
-        {
-            var result = true;
-            var Error = 0;
-            if (GetAllNoCache().Where(p => p.UserID == UserID).Count() > 0)
-            {
-                var rows = EF.Database.ExecuteSqlCommand("delete from T_UserRoles where UserID=" + UserID);
-                if (rows == 0)
-                {
-                    Error++;
-                }
-            }
-            if (Error != 0)
-            {
-                Rollback();
-                result = false;
-            }
-            return result;
-        }
         [AOPTransaction]
+        [Log]
         public int AddUserTo(int UserID, int[] roleids)
         {
             var result = true;
