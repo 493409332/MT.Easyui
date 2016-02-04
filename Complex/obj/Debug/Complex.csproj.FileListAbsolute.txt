@@ -228,3 +228,4 @@ F:\快盘\github_repository\MT.EasyuiGit远端\MT.Easyui\Complex\bin\Debug\zh-Ha
 F:\快盘\github_repository\MT.EasyuiGit远端\MT.Easyui\Complex\bin\Debug\zh-Hans\System.Net.Http.Formatting.resources.dll
 F:\快盘\github_repository\MT.EasyuiGit远端\MT.Easyui\Complex\obj\Debug\Complex.dll
 F:\快盘\github_repository\MT.EasyuiGit远端\MT.Easyui\Complex\obj\Debug\Complex.pdb
+F:\快盘\github_repository\MT.EasyuiGit远端\MT.Easyui\Complex\obj\Debug\Complex.csprojResolveAssemblyReference.cache
